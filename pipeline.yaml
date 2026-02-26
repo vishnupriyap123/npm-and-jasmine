@@ -1,0 +1,19 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: npm-pipeline
+spec:
+  tasks:
+    - name: npm-install
+      taskRef:
+        name: npm-task
+    - name: run-tests
+      taskRef:
+        name: jasmine-task
+      runAfter:
+        - npm-install
+    - name: build
+      taskRef:
+        name: build-task
+      runAfter:
+        - run-tests
