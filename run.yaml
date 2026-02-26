@@ -1,0 +1,21 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: npm-pipeline-run
+spec:
+  pipelineRef:
+    name: npm-pipeline
+  params:
+    - name: git-url
+      value: '<your-git-url>'
+    - name: git-revision
+      value: 'main'
+    - name: node-version
+      value: '14'
+  workspaces:
+    - name: shared-workspace
+      workspace: shared-workspace
+    - name: docker-credentials
+      workspace: docker-credentials
+  timeout: '1h'
+  serviceAccountName: npm-service-account
