@@ -1,0 +1,12 @@
+
+Output from `npx jasmine`
+
+✓ spec1 - should do something
+✓ spec2 - should do something else
+✓ spec3 - should handle edge cases
+✓ spec4 - should return expected results
+✓ spec5 - should throw error on invalid input
+✓ spec6 - should handle async calls
+✓ spec7 - should clean up after itself
+
+7 specs, 0 failures
